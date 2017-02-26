@@ -10,6 +10,7 @@ public class Main {
                 int a = in.nextInt();
                 System.out.println("Enter in second number.");
                 int b = in.nextInt();
+                System.out.println(Iterative(a,b));
                 System.out.println(Recursive(a,b));
 
 
@@ -34,7 +35,21 @@ public class Main {
                 return Recursive(a,b);
             }
             public static int Iterative(int a, int b){
-
+                while(a!=0&&a!=1&&b!=0&&b!=1){
+                    if(b>a) {
+                        b = b % a;
+                    }
+                    if(a>b){
+                        a=a%b;
+                    }
+                }
+                if(a==0)
+                    return b;
+                else if(b==0)
+                    return a;
+                else if(a==1||b==1)
+                    return 1;
+                return -1;
 
     }
 }
